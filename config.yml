@@ -192,7 +192,7 @@ pip_packages:
   - name: mkdocs
 
 post_provision_tasks:
-  - "{{ playbook_dir }}/../custom/*.yml"
+  - "{{ playbook_dir }}/../tasks/*.yml"
 
 # Variables used across custom/*.yml
 local_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
