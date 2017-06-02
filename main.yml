@@ -6,4 +6,4 @@
     - include_vars: config.yml
       tags: ['always']
 
-- include: playbook/main.yml
+- include: geerlingguy.mac-dev-playbook/main.yml

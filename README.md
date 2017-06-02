@@ -25,13 +25,13 @@ This playbook installs and configures most of the software I use on my Mac for w
     ansible-galaxy install -r requirements.yml
 
     # Run the playbook.
-    ansible-playbook main.yml -i playbook/inventory -K
+    ansible-playbook main.yml -i geerlingguy.mac-dev-playbook/inventory -K
 
 ### Running a specific set of tagged tasks
 
 You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. The tags available are `dotfiles`, `homebrew`, `mas` and `osx`.
 
-    ansible-playook main.yml -i playbook/inventory -K --tags "dotfiles,homebrew"
+    ansible-playook main.yml -i geerlingguy.mac-dev-playbook/inventory -K --tags "dotfiles,homebrew"
 
 ### Screenshot
 
