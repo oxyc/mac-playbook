@@ -1,0 +1,14 @@
+---
+- name: Ensure brew installed Bash is listed as an acceptable shell.
+  lineinfile:
+    path: /etc/shells
+    line: "/usr/local/bin/bash"
+  become: yes
+  when: "'bash' in homebrew_installed_packages"
+
+- name: Change user shell to brew installed Bash.
+  command: "chsh -s /usr/local/bin/bash {{ local_user }}"
+  register: chsh_result
+  changed_when: chsh_result.rc != 0
+  become: yes
+  when: "'bash' in homebrew_installed_packages"

@@ -1,0 +1,208 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_sudoers: yes
+configure_terminal: no
+configure_osx: yes
+
+dotfiles_repo: https://github.com/oxyc/dotfiles.git
+dotfiles_repo_accept_hostkey: yes
+dotfiles_repo_local_destination: ~/Projects/Personal/dotfiles
+dotfiles_files:
+  - .agignore
+  - .bash_profile
+  - .bashrc
+  - .dircolors
+  - .gitconfig
+  - .gitignore
+  - .inputrc
+  - .lftprc
+  - .bash/aliases.sh
+  - .bash/colors.sh
+  - .bash/exports.sh
+  - .bash/functions.sh
+  - .bash/prompt.sh
+  - .bash/shell.sh
+  - .bash/ssh-agent.sh
+  - .bash_completion.d/misc
+  - .osx/osx.sh
+
+homebrew_installed_packages:
+  # Install GNU packages.
+  # https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/
+  - coreutils
+  - binutils
+  - diffutils
+  - { name: ed, install_options: "default-names" }
+  - { name: findutils, install_options: "with-default-names" }
+  - gawk
+  - { name: gnu-indent, install_options: "with-default-names" }
+  - { name: gnu-sed, install_options: "with-default-names" }
+  - { name: gnu-tar, install_options: "with-default-names" }
+  - { name: gnu-which, install_options: "with-default-names" }
+  - gnutls
+  - { name: grep, install_options: "with-default-names" }
+  - gzip
+  - screen
+  - watch
+  - { name: wdiff, install_options: "with-gettext" }
+  - wget
+  # Update GNU pre-installed packages.
+  - bash
+  - emacs
+  - gdb
+  - gpatch
+  - less
+  - m4
+  - make
+  - nano
+  # Update non-GNU pre-installed packages.
+  - file-formula
+  - git
+  - openssh
+  - perl
+  - python
+  - rsync
+  - svn
+  - unzip
+
+  # Some other GNU tools.
+  - autoconf                  # build tool
+  - gettext                   # gnu translation tool
+  - gpg                       # gnu privacy guard
+  - readline                  # gnu readline
+
+  # More terminal tools.
+  - httpie                    # cli http client
+  - iperf                     # bandwidth benchmarking
+  - lynx                      # browser
+  - nmap                      # network mapper
+  - openssl                   # ssl/tls toolkit
+  - p7zip                     # 7 zip
+  - pigz                      # parallel gzip
+  - pv                        # pipe viewer
+  - wrk                       # http benchmarking
+  - zopfli                    # zopfli compression
+
+  # Programming languages
+  - lua
+  - node
+  - go
+  - php71
+  - python3
+  - ruby
+
+  # Libraries
+  - luajit                    # required by vim
+
+  # Essential development tools/libraries.
+  - { name: base16-shell, install_options: "HEAD" } # base16 colors in shell
+  - exa                       # ls replacement
+  - fasd                      # autojump
+  - fzf                       # fuzzy finder
+  - khd                       # hotkey daemon
+  - massren                   # mass renaming in vim
+  - mosh                      # mobile shell
+  - rename                    # regex rename
+  - ssh-copy-id               # send public key to remote
+  - the_silver_searcher       # ag, faster than ack
+  - tree                      # recursive directory listing
+  - { name: vim, install_options: "with-luajit,without-ruby,override-system-vi" }
+
+  # Package managers
+  - composer
+
+  # Shell completions
+  - bash-completion2 # bash 4
+  - cap-completion
+  - open-completion
+  - vagrant-completion
+  - wpcli-completion
+
+  # Image/Video tools
+  - exiv2
+  - { name: ffmpeg, install_options: "with-fdk-aac,with-ffplay,with-freetype,with-libass,with-libquvi,with-libvorbis,with-libvpx,with-opus,with-x265" }
+  - gifsicle
+  - { name: imagemagick, install_options: "with-webp" }
+  - mozjpeg
+  - optipng
+  - pngcheck
+  - webp
+
+  # Install font tools.
+  - sfnt2woff
+  - sfnt2woff-zopfli
+  - woff2
+
+homebrew_taps:
+  - bramstein/webfonttools # font tools
+  - caskroom/cask          # casks
+  - caskroom/fonts         # inconsolata font
+  - caskroom/versions      # iterm2-beta
+  - homebrew/core          #
+  - homebrew/php           #
+  - koekeishiya/formulae   # chunkwm, khd
+  - laurent22/massren      # massren
+  - oxyc/custom            # base16-shell, kitty
+
+homebrew_cask_apps:
+  - alfred                 # launcher
+  - adobe-dng-converter    # arw -> dng
+  - docker                 # work
+  - filezilla              # ftp gui
+  - firefox                # crossbrowser testing
+  - font-inconsolata-dz-for-powerline # dev font
+  - google-chrome          # primary browser
+  - iina                   # movie player
+  - iterm2-beta            # beta for no-window-bar
+  - lastpass               # browser plugins
+  - playmemories-home      # sony camera
+  - skype                  # work
+  - slack                  # work
+  - sublime-text           # work
+  - transmission           # torrents
+  - vagrant                # work
+  - virtualbox             # work
+
+homebrew_services:
+  - khd
+
+osx_script: ~/.osx/osx.sh
+
+composer_packages:
+  - name: hirak/prestissimo
+  - name: wp-cli/wp-cli
+    version: '~1.1.0'
+  - name: drush/drush
+    version: '^8.1'
+
+npm_packages:
+  - name: yarn
+  - name: webpack
+  - name: bower
+  - name: gulp
+  - name: svgo
+
+gem_packages:
+  - name: bundler
+  - name: capistrano
+  - name: rubocop
+
+pip_packages:
+  - name: mkdocs
+
+post_provision_tasks:
+  - "{{ playbook_dir }}/../custom/*.yml"
+
+# Variables used across custom/*.yml
+local_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
+
+# custom/vagrant.yml settings.
+vagrant_plugins_force_install: false
+vagrant_plugins:
+  - vagrant-hostsupdater
+  - vagrant-vbguest
+
+# custom/vim.yml settings.
+vimrc_repo: https://github.com/oxyc/vimrc.git
+vimrc_repo_local_destination: ~/Projects/Personal/vimrc

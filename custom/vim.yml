@@ -1,0 +1,13 @@
+---
+- name: Get vimrc repository.
+  git:
+    repo: "{{ vimrc_repo }}"
+    dest: "{{ vimrc_repo_local_destination }}"
+    accept_hostkey: "{{ vimrc_repo_accept_hostkey|default(false) }}"
+
+- name: Install vimrc repository.
+  command: make install
+  args:
+    chdir: "{{ vimrc_repo_local_destination }}"
+  register: vimrc_install_result
+  changed_when: "'Cloning' in vimrc_install_result.stdout"
