@@ -1,3 +1,5 @@
+TAGS ?= all
+
 all: provision
 
 install: install-ansible install-xcode install-repo
@@ -11,7 +13,7 @@ install-xcode:
 install-repo: ./roles ./geerlingguy.mac-dev-playbook/main.yml
 
 provision:
-	ansible-playbook main.yml -i geerlingguy.mac-dev-playbook/inventory -K
+	ansible-playbook main.yml -i geerlingguy.mac-dev-playbook/inventory -K --tags="$(TAGS)"
 
 .PHONY: install provision install-ansible install-xcode install-repo
 
