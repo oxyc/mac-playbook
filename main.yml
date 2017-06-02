@@ -1,0 +1,9 @@
+---
+- hosts: all
+  connection: local
+
+  pre_tasks:
+    - include_vars: config.yml
+      tags: ['always']
+
+- include: playbook/main.yml

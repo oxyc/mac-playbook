@@ -1,0 +1,10 @@
+---
+# https://github.com/geerlingguy/ansible-role-dotfiles/issues/11
+- name: geerlingguy.dotfiles
+  src: https://github.com/oxyc/ansible-role-dotfiles.git
+  version: issue-11
+# https://github.com/geerlingguy/ansible-role-homebrew/issues/65
+- name: geerlingguy.homebrew
+  src: https://github.com/oxyc/ansible-role-homebrew.git
+  version: issue-65
+- name: geerlingguy.mas

@@ -1,0 +1,3 @@
+[submodule "playbook"]
+	path = playbook
+	url = https://github.com/generoi/mac-dev-playbook.git
