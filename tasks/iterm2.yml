@@ -1,0 +1,26 @@
+---
+- name: Enable iTerm2 automatic updates.
+  osx_defaults:
+    domain: com.googlecode.iterm2
+    key: SUEnableAutomaticChecks
+    type: bool
+    value: "{{ iterm2_enable_automatic_updates }}"
+  tags: ['iterm2']
+
+- name: Set custom preferences folder.
+  osx_defaults:
+    domain: com.googlecode.iterm2
+    key: PrefsCustomFolder
+    type: string
+    value: "{{ iterm2_preference_folder }}"
+  when: iterm2_preference_folder is defined
+  tags: ['iterm2']
+
+- name: Enable custom preferences folder.
+  osx_defaults:
+    domain: com.googlecode.iterm2
+    key: LoadPrefsFromCustomFolder
+    type: bool
+    value: true
+  when: iterm2_preference_folder is defined
+  tags: ['iterm2']

@@ -195,12 +195,16 @@ post_provision_tasks:
 # Variables used across tasks/*.yml
 local_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
 
-# custom/vagrant.yml settings.
+# tasks/vagrant.yml settings.
 vagrant_plugins_force_install: false
 vagrant_plugins:
   - vagrant-hostsupdater
   - vagrant-vbguest
 
-# custom/vim.yml settings.
+# tasks/vim.yml settings.
 vimrc_repo: https://github.com/oxyc/vimrc.git
 vimrc_repo_local_destination: ~/Projects/Personal/vimrc
+
+# tasks/iterm2.yml settings.
+iterm2_enable_automatic_updates: true
+iterm2_preference_folder: "{{ playbook_dir }}/../files"
