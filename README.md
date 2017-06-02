@@ -28,3 +28,11 @@ You can filter which part of the provisioning process to run by specifying a set
 ### Screenshot
 
 ![Screenshot](http://i.imgur.com/XJjQx0C.jpg)
+
+## Future additions
+
+### Things that still need to be done manually
+
+1. Remap Caps Lock to Escape (requires macOS Sierra 10.12.1+).
+1. Configure Dock
+1. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
