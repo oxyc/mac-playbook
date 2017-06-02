@@ -1,6 +1,4 @@
 ---
-downloads: ~/.ansible-downloads/
-
 configure_sudoers: yes
 configure_terminal: no
 configure_osx: yes
@@ -194,7 +192,7 @@ pip_packages:
 post_provision_tasks:
   - "{{ playbook_dir }}/../tasks/*.yml"
 
-# Variables used across custom/*.yml
+# Variables used across tasks/*.yml
 local_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
 
 # custom/vagrant.yml settings.
