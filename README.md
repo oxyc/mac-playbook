@@ -32,3 +32,7 @@ This playbook installs and configures most of the software I use on my Mac for w
 You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. The tags available are `dotfiles`, `homebrew`, `mas` and `osx`.
 
     ansible-playook main.yml -i playbook/inventory -K --tags "dotfiles,homebrew"
+
+### Screenshot
+
+![Screenshot](http://i.imgur.com/XJjQx0C.jpg)
