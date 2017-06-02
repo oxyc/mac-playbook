@@ -9,23 +9,15 @@ This playbook installs and configures most of the software I use on my Mac for w
 
 ## Installation
 
-    # Install Ansible
-    sudo easy_install pip
-    sudo pip install ansible
-
-    # Install Apple's command line tools
-    xcode-select --install
-    sudo xcode-select -switch /Library/Developer/CommandLineTools
-
-    # Clone this repository to your local drive
+    # Clone this repository to your local drive.
     git clone --recursive https://github.com/oxyc/mac-playbook.git
     cd mac-playbook
 
-    # Install required Ansible roles
-    ansible-galaxy install -r requirements.yml
+    # Install dependencies.
+    make install
 
     # Run the playbook.
-    ansible-playbook main.yml -i geerlingguy.mac-dev-playbook/inventory -K
+    make provision
 
 ### Running a specific set of tagged tasks
 
