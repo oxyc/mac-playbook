@@ -92,6 +92,7 @@ homebrew_installed_packages:
 
   # Libraries
   - luajit                    # required by vim
+  - duti                      # required by tasks/default-applications.yml
 
   # Essential development tools/libraries.
   - { name: base16-shell, install_options: "HEAD" } # base16 colors in shell
@@ -154,6 +155,8 @@ homebrew_cask_apps:
   - iina                   # movie player
   - iterm2-beta            # beta for no-window-bar
   - lastpass               # browser plugins
+  - macdown                # markdown editor
+  - macvim                 # text editor
   - playmemories-home      # sony camera
   - skype                  # work
   - slack                  # work
@@ -208,3 +211,28 @@ vimrc_repo_local_destination: ~/Projects/Personal/vimrc
 # tasks/iterm2.yml settings.
 iterm2_enable_automatic_updates: true
 iterm2_preference_folder: "{{ playbook_dir }}/../files"
+
+# tasks/default-applications.yml
+default_applications:
+  # Iina
+  - { extension: avi, handler: com.colliderli.iina }
+  - { extension: flv, handler: com.colliderli.iina }
+  - { extension: mkv, handler: com.colliderli.iina }
+  - { extension: mov, handler: com.colliderli.iina }
+  - { extension: mp4, handler: com.colliderli.iina }
+  - { extension: mpg, handler: com.colliderli.iina }
+  # MacDown
+  - { extension: md,  handler: com.uranusjr.macdown }
+  # Chrome
+  - { extension: html, handler: com.google.Chrome, roles: '' }
+  - { extension: xml,  handler: com.google.Chrome }
+  # MacVim
+  - { extension: cfg,  handler: org.vim.MacVim }
+  - { extension: css,  handler: org.vim.MacVim }
+  - { extension: inc,  handler: org.vim.MacVim }
+  - { extension: js,   handler: org.vim.MacVim }
+  - { extension: json, handler: org.vim.MacVim }
+  - { extension: php,  handler: org.vim.MacVim }
+  - { extension: scss, handler: org.vim.MacVim }
+  - { extension: txt,  handler: org.vim.MacVim }
+  - { extension: yml,  handler: org.vim.MacVim }
