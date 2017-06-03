@@ -21,7 +21,7 @@ provision:
 	git submodule update --init --recursive
 
 /usr/local/bin/pip:
-	s/udo easy_install pip
+	sudo easy_install pip
 
 /usr/local/bin/ansible-playbook: /usr/local/bin/pip
 	sudo pip install ansible
