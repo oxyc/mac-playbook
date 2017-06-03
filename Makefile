@@ -2,7 +2,7 @@ TAGS ?= all
 
 all: provision
 
-install: install-ansible install-xcode install-repo
+install: install-xcode install-ansible install-repo
 
 install-ansible: /usr/local/bin/pip /usr/local/bin/ansible
 
@@ -15,7 +15,10 @@ install-repo: ./roles ./geerlingguy.mac-dev-playbook/main.yml
 provision:
 	ansible-playbook main.yml -i geerlingguy.mac-dev-playbook/inventory -K --tags="$(TAGS)"
 
-.PHONY: install provision install-ansible install-xcode install-repo
+clean:
+	rm -rf ./roles
+
+.PHONY: all install install-ansible install-xcode install-repo provision clean
 
 ./geerlingguy.mac-dev-playbook/main.yml:
 	git submodule update --init --recursive
@@ -28,8 +31,3 @@ provision:
 
 ./roles:
 	ansible-galaxy install -r requirements.yml
-
-clean:
-	rm -rf ./roles
-
-.PHONY: clean
