@@ -1,0 +1,9 @@
+---
+# @todo might not work, need to test.
+- name: Copy Iina Keybindings into place.
+  copy:
+    src: "{{ iina_keybinding_file }}"
+    dest: "~/Library/Application Support/com.colliderli.iina/input_conf/{{ iina_keybinding_file|basename }}"
+  when:
+    - "'iina' in homebrew_cask_apps"
+    - iina_keybinding_file is defined

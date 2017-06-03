@@ -285,3 +285,6 @@ default_applications:
   - { extension: scss, handler: org.vim.MacVim }
   - { extension: txt,  handler: org.vim.MacVim }
   - { extension: yml,  handler: org.vim.MacVim }
+
+# tasks/iina.yml settings.
+iina_keybinding_file: "{{ playbook_dir }}/../files/Iina.keybindings.conf"
