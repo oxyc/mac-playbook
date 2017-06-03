@@ -148,6 +148,7 @@ homebrew_taps:
 homebrew_cask_apps:
   - alfred                 # launcher
   - adobe-dng-converter    # arw -> dng
+  - clipy                  # clipboard manager
   - docker                 # work
   - filezilla              # ftp gui
   - firefox                # crossbrowser testing
@@ -165,6 +166,14 @@ homebrew_cask_apps:
   - transmission           # torrents
   - vagrant                # work
   - virtualbox             # work
+  # Quick Look plugins
+  - qlcolorcode            # syntax highlighting
+  - qlstephen              # files without file extensions
+  - qlmarkdown             # markdown
+  - quicklook-json         # json
+  - quicklook-csv          # csv
+  - qlimagesize            # display image size and resolution
+  - webpquicklook          # webp
 
 homebrew_services:
   - khd
