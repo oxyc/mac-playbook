@@ -8,3 +8,4 @@
   src: https://github.com/oxyc/ansible-role-homebrew.git
   version: issue-65
 - name: geerlingguy.mas
+- name: fubarhouse.macdock

@@ -1,0 +1,6 @@
+---
+- name: Manage Dock.
+  include_role:
+    name: fubarhouse.macdock
+  when: configure_dock
+  tags: ['dock']
