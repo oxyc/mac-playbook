@@ -28,3 +28,8 @@ provision:
 
 ./roles:
 	ansible-galaxy install -r requirements.yml
+
+clean:
+	rm -rf ./roles
+
+.PHONY: clean
