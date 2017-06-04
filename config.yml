@@ -205,7 +205,7 @@ gem_packages:
 pip_packages:
   - name: mkdocs
   - name: neovim # python2 provider for neovim
-  - name: neovim
+  - name: neovim # python3 provider for neovim
     executable: pip3
 
 post_provision_tasks:
