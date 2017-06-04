@@ -205,7 +205,8 @@ gem_packages:
 pip_packages:
   - name: mkdocs
   - name: neovim # python2 provider for neovim
-  # @todo python3 provider for neovim: pip3 install neovim
+  - name: neovim
+    executable: pip3
 
 post_provision_tasks:
   - "{{ playbook_dir }}/../tasks/*.yml"
