@@ -25,14 +25,23 @@ You can filter which part of the provisioning process to run by specifying a set
 
     ansible-playook main.yml -i geerlingguy.mac-dev-playbook/inventory -K --tags "dotfiles,homebrew"
 
-### Screenshot
+### Screenshots
 
 ![Screenshot](http://i.imgur.com/XJjQx0C.jpg)
+
+[chunkwm](https://github.com/koekeishiya/chunkwm) as my tiling window manager and [khd](https://github.com/koekeishiya/khd) as my hotkey dameon. This will be added to the playbook once chunkwm hits alpha.
+
+![vimrc](http://i.imgur.com/MFYk8fT.jpg)
+
+[iTerm2](https://www.iterm2.com/) running [neovim](https://neovim.io/) using my [vimrc repository](https://github.com/oxyc/vimrc).
+
+![IINA](http://i.imgur.com/doIWf0i.jpg)
+
+[IINA](https://lhc70000.github.io/iina/) as Video player.
 
 ## Future additions
 
 ### Things that still need to be done manually
 
 1. Remap Caps Lock to Escape (requires macOS Sierra 10.12.1+).
-1. Configure Dock
 1. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
