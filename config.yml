@@ -188,6 +188,7 @@ composer_packages:
     version: '~1.1.0'
   - name: drush/drush
     version: '^8.1'
+  - name: asm89/twig-lint # synstastic vim linter for twig
 
 npm_packages:
   - name: yarn
@@ -195,18 +196,28 @@ npm_packages:
   - name: bower
   - name: gulp
   - name: svgo
+  - name: dockerfile_lint # syntastic vim linter for dockerfile
+  - name: jsonlint        # syntastic vim linter for json
+  - name: js-yaml         # syntastic vim linter for yaml
+  - name: mixedindentlint # syntastic vim linter for general indents
 
 gem_packages:
   - name: bundler
   - name: capistrano
   - name: rubocop
-  - name: neovim # ruby provider for neovim
+  - name: neovim       # ruby provider for neovim
+  - name: mdl          # syntastic vim linter for markdown
+  - name: sass         # syntastic vim linter for sass
 
 pip_packages:
   - name: mkdocs
-  - name: neovim # python2 provider for neovim
-  - name: neovim # python3 provider for neovim
+  - name: neovim       # python2 provider for neovim
+    executable: pip2
+  - name: neovim       # python3 provider for neovim
     executable: pip3
+  - name: ansible-lint # syntastic vim linter for ansible
+    executable: pip2
+  - name: bashate      # syntastic vim linter for bash
 
 post_provision_tasks:
   - "{{ playbook_dir }}/../tasks/*.yml"
