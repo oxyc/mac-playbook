@@ -48,7 +48,6 @@ You can filter which part of the provisioning process to run by specifying a set
 1. Configure _Language & Region_ preferences.
 1. Turn on FileVault under _Security & Privacy_ preferences.
 1. Allow `chunkwm`, `khd` and `iTerm.app` Accessibility control under _Security & Privacy_ preferences.
-1. Turn off [_Secure Keyboard entry_](https://github.com/koekeishiya/khd/issues/7) for `khd` to function.
 1. Configure `Alfred.app` with `⌘P` as the hotkey and _Alfred dark_ as the theme.
 1. Remove `iTunes helper` from _Login items_ under _User & Groups_ preferences.
 1. Disable gesture to Zoom under _Accessibility_ preferences.
