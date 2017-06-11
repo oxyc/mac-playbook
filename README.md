@@ -44,7 +44,6 @@ You can filter which part of the provisioning process to run by specifying a set
 
 ### Things that still need to be done manually
 
-1. Remap Caps Lock to Escape (requires macOS Sierra 10.12.1+).
 1. Create 6 mission control desktops and bind `^1`, `^2`… as _Switch to Desktop_ shortcuts under _Keyboard preferences_.
 1. Configure _Language & Region_ preferences.
 1. Turn on FileVault under _Security & Privacy_ preferences.
