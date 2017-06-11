@@ -45,7 +45,6 @@ You can filter which part of the provisioning process to run by specifying a set
 ### Things that still need to be done manually
 
 1. Create 6 mission control desktops and bind `^1`, `^2`… as _Switch to Desktop_ shortcuts under _Keyboard preferences_.
-1. Configure _Language & Region_ preferences.
 1. Turn on FileVault under _Security & Privacy_ preferences.
 1. Allow `chunkwm`, `khd` and `iTerm.app` Accessibility control under _Security & Privacy_ preferences.
 1. Configure `Alfred.app` with `⌘P` as the hotkey and _Alfred dark_ as the theme.
