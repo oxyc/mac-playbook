@@ -215,9 +215,10 @@ pip_packages:
     executable: pip2
   - name: neovim       # python3 provider for neovim
     executable: pip3
-  - name: ansible-lint # syntastic vim linter for ansible
+  - name: ansible-lint # vim linter for ansible
     executable: pip2
-  - name: yamllint     # syntastic vim linter for bash
+  - name: yamllint     # vim linter for bash
+  - name: proselint    # vim linter for text
 
 post_provision_tasks:
   - "{{ playbook_dir }}/../tasks/*.yml"
