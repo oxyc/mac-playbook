@@ -88,7 +88,7 @@ homebrew_installed_packages:
   - lua
   - node
   - go
-  - php71
+  - { name: php71, install_options: "with-pear,without-fpm" }
   - python3
   - ruby
 
