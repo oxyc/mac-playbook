@@ -15,6 +15,7 @@ dotfiles_files:
   - .gitconfig
   - .gitignore
   - .inputrc
+  - .khdrc
   - .lftprc
   - .bash/aliases.sh
   - .bash/colors.sh
