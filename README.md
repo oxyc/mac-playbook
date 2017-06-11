@@ -52,6 +52,11 @@ You can filter which part of the provisioning process to run by specifying a set
 1. Remove `iTunes helper` from _Login items_ under _User & Groups_ preferences.
 1. Disable gesture to Zoom under _Accessibility_ preferences.
 1. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
+1. Not sure if these actually do much but enable the following in `chrome://flags`:
+   - Fast tab/window close
+   - Automatic tab discardin
+   - Throttle expensive background timers
+   - Optimize background video playback
 
 ### Research / todos
 
