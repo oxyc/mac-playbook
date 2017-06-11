@@ -1,0 +1,11 @@
+[user]
+	name = {{ git_user_name }}
+	email = {{ git_user_email }}
+	{% if git_signingkey -%}
+	signingkey = {{ git_signingkey }}
+	{% endif %}
+
+{% if git_github_user %}
+[github]
+	user = {{ git_github_user }}
+{% endif %}

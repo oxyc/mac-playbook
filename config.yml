@@ -301,3 +301,9 @@ default_applications:
 
 # tasks/iina.yml settings.
 iina_keybinding_file: "{{ playbook_dir }}/../files/Iina.keybindings.conf"
+
+# tasks/git.yml settings.
+git_user_name: "Oskar Schöldström"
+git_user_email: m@oxy.fi
+git_signingkey: B1E80EF9EBBB2973
+git_github_user: oxyc

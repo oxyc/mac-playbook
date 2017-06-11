@@ -1,0 +1,7 @@
+---
+- name: Add ~/.local.gitconfig
+  template:
+    src: "{{ playbook_dir }}/../templates/local.gitconfig.j2"
+    dest: ~/.local.gitconfig
+    mode: 0644
+  tags: ['dotfiles']
