@@ -206,6 +206,8 @@ npm_packages:
 gem_packages:
   - name: bundler
   - name: capistrano
+  - name: jekyll
+  - name: jekyll-feed
   - name: rubocop
   - name: neovim       # ruby provider for neovim
   - name: sass         # vim linter for sass
