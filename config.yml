@@ -8,7 +8,7 @@ dotfiles_repo: https://github.com/oxyc/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/Projects/Personal/dotfiles
 dotfiles_files:
-  - .agignore
+  - .ignore
   - .bash_profile
   - .bashrc
   - .dircolors
