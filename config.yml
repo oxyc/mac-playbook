@@ -115,11 +115,11 @@ homebrew_installed_packages:
   - composer
 
   # Shell completions
-  - bash-completion2 # bash 4
-  - cap-completion
-  - open-completion
-  - vagrant-completion
-  - wpcli-completion
+  - bash-completion2         # bash 4
+  - cap-completion           # capistrano
+  - open-completion          # open
+  - vagrant-completion       # vagrant
+  - wpcli-completion         # wp-cli
 
   # Image/Video tools
   - exiv2
@@ -180,48 +180,43 @@ homebrew_cask_apps:
   - webpquicklook          # webp
 
 homebrew_services:
-  - khd
+  - khd                    # hotkey daemon
 
 osx_script: ~/.osx/osx.sh
 
 composer_packages:
-  - name: hirak/prestissimo
-  - name: wp-cli/wp-cli
-    version: '~1.1.0'
-  - name: drush/drush
-    version: '^8.1'
-  - name: asm89/twig-lint # synstastic vim linter for twig
+  - name: hirak/prestissimo    # parallel composer downloads
+  - name: wp-cli/wp-cli        # wp cli tool
+  - { name: drush/drush, version: '^8.1' } # drupal cli tool
+  - name: asm89/twig-lint      # vim linter for twig
 
 npm_packages:
-  - name: yarn
-  - name: webpack
-  - name: bower
-  - name: gulp
-  - name: svgo
+  - name: yarn                 # package manager
+  - name: webpack              # build tool
+  - name: bower                # package manager
+  - name: gulp                 # build tool
+  - name: svgo                 # svg minifier
   - name: jsonlint             # vim linter for json
   - name: markdownlint-cli     # vim linter for markdown
   - name: eslint               # vim linter for javascript
   - name: eslint-plugin-import # dependency of global eslint
 
 gem_packages:
-  - name: bundler
-  - name: capistrano
-  - name: jekyll
-  - name: jekyll-feed
-  - name: rubocop
-  - name: neovim       # ruby provider for neovim
-  - name: sass         # vim linter for sass
+  - name: bundler              # package manager
+  - name: capistrano           # deploy tool
+  - name: jekyll               # github pages
+  - name: jekyll-feed          # github pages
+  - name: rubocop              # drupal vm lint
+  - name: neovim               # ruby provider for neovim
+  - name: sass                 # vim linter for sass
 
 pip_packages:
-  - name: mkdocs
-  - name: neovim       # python2 provider for neovim
-    executable: pip2
-  - name: neovim       # python3 provider for neovim
-    executable: pip3
-  - name: ansible-lint # vim linter for ansible
-    executable: pip2
-  - name: yamllint     # vim linter for bash
-  - name: proselint    # vim linter for text
+  - name: mkdocs                       # drupal vm docs
+  - { name: neovim, executable: pip2 } # python2 provider for neovim
+  - { name: neovim, executable: pip3 } # python3 provider for neovim
+  - name: ansible-lint                 # vim linter for ansible
+  - name: yamllint                     # vim linter for bash
+  - name: proselint                    # vim linter for text
 
 post_provision_tasks:
   - "{{ playbook_dir }}/../tasks/*.yml"
@@ -286,20 +281,20 @@ default_applications:
   - { extension: mp4, handler: com.colliderli.iina }
   - { extension: mpg, handler: com.colliderli.iina }
   # MacDown
-  - { extension: md,  handler: com.uranusjr.macdown }
+  - { extension: md, handler: com.uranusjr.macdown }
   # Chrome
   - { extension: html, handler: com.google.Chrome, roles: '' }
-  - { extension: xml,  handler: com.google.Chrome }
+  - { extension: xml, handler: com.google.Chrome }
   # MacVim
-  - { extension: cfg,  handler: org.vim.MacVim }
-  - { extension: css,  handler: org.vim.MacVim }
-  - { extension: inc,  handler: org.vim.MacVim }
-  - { extension: js,   handler: org.vim.MacVim }
+  - { extension: cfg, handler: org.vim.MacVim }
+  - { extension: css, handler: org.vim.MacVim }
+  - { extension: inc, handler: org.vim.MacVim }
+  - { extension: js, handler: org.vim.MacVim }
   - { extension: json, handler: org.vim.MacVim }
-  - { extension: php,  handler: org.vim.MacVim }
+  - { extension: php, handler: org.vim.MacVim }
   - { extension: scss, handler: org.vim.MacVim }
-  - { extension: txt,  handler: org.vim.MacVim }
-  - { extension: yml,  handler: org.vim.MacVim }
+  - { extension: txt, handler: org.vim.MacVim }
+  - { extension: yml, handler: org.vim.MacVim }
 
 # tasks/iina.yml settings.
 iina_keybinding_file: "{{ playbook_dir }}/../files/Iina.keybindings.conf"
