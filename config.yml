@@ -225,7 +225,7 @@ post_provision_tasks:
 dockitems_disabled:
   - Launchpad
   - Mail
-  # - Safari
+  - Safari
   - Contacts
   - Notes
   - Reminders
