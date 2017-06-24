@@ -122,7 +122,7 @@ homebrew_installed_packages:
   - ssh-copy-id               # send public key to remote
   - the_silver_searcher       # ag, faster than ack
   - tree                      # recursive directory listing
-  - { name: vim, install_options: "with-luajit,without-ruby,override-system-vi" }
+  - { name: vim, install_options: "with-luajit,without-ruby,with-override-system-vi" }
   - neovim                    # the new vim
 
   # Package managers
