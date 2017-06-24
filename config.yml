@@ -26,6 +26,19 @@ dotfiles_files:
   - .bash/ssh-agent.sh
   - .bash_completion.d/misc
   - .osx/osx.sh
+  - .weechat/irc.conf
+  - .weechat/lua/autoload/matrix.lua
+  - .weechat/perl/autoload/buffers.pl
+  - .weechat/plugins.conf
+  - .weechat/plugins/scripts/perl/buffers.pl
+  - .weechat/plugins/weechat-matrix-protocol-script/matrix.lua
+  - .weechat/plugins/weechat-notification-center/notification_center.py
+  - .weechat/python/autoload/notification_center.py
+  - .weechat/python/autoload/wee_slack.py
+  - .weechat/script.conf
+  - .weechat/weechat.conf
+  - .weechat/weechat.png
+  - .weechat/xfer.conf
 
 homebrew_installed_packages:
   # Install GNU packages.
@@ -81,6 +94,7 @@ homebrew_installed_packages:
   - p7zip                     # 7 zip
   - pigz                      # parallel gzip
   - pv                        # pipe viewer
+  - { name: weechat, install_options: "with-perl,with-python,with-lua" }
   - wrk                       # http benchmarking
   - zopfli                    # zopfli compression
 
@@ -217,9 +231,13 @@ pip_packages:
   - name: ansible-lint                 # vim linter for ansible
   - name: yamllint                     # vim linter for bash
   - name: proselint                    # vim linter for text
+  - name: pync                         # weechat notification_center plugin
+  - name: websocket-client             # weechat wee_slack plugin
 
-post_provision_tasks:
-  - "{{ playbook_dir }}/../tasks/*.yml"
+luarocks_packages:
+  - name: lua-cjson                    # weechat matrix plugin
+
+post_provision_tasks: "{{ playbook_dir }}/../tasks/*.yml"
 
 # fubarhouse.macdock settings.
 dockitems_disabled:

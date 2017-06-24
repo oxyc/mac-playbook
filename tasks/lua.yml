@@ -1,0 +1,12 @@
+---
+- name: Check which Luarocks packages are installed.
+  command: "luarocks list"
+  register: luarocks_list_output
+  changed_when: false
+  tags: ['lua']
+
+- name: Install Luarocks packages.
+  command: "luarocks install {{ item.name|default(item) }}"
+  with_items: "{{ luarocks_packages|default([]) }}"
+  when: item.name|default(item) not in luarocks_list_output.stdout
+  tags: ['lua']
