@@ -17,6 +17,7 @@ dotfiles_files:
   - .inputrc
   - .khdrc
   - .lftprc
+  - .bash_sessions_disable
   - .bash/aliases.sh
   - .bash/colors.sh
   - .bash/exports.sh
