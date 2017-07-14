@@ -11,6 +11,7 @@ dotfiles_files:
   - .ignore
   - .bash_profile
   - .bashrc
+  - .chunkwmrc
   - .dircolors
   - .gitconfig
   - .gitignore
@@ -113,6 +114,7 @@ homebrew_installed_packages:
 
   # Essential development tools/libraries.
   - { name: base16-shell, install_options: "HEAD" } # base16 colors in shell
+  - { name: chunkwm, install_options: "without-border" } # tiling window manager
   - exa                       # ls replacement
   - fasd                      # autojump
   - fzf                       # fuzzy finder
@@ -157,6 +159,7 @@ homebrew_taps:
   - caskroom/cask          # casks
   - caskroom/fonts         # inconsolata font
   - caskroom/versions      # iterm2-beta
+  - crisidev/homebrew-chunkwm # chunkwm
   - homebrew/core          #
   - homebrew/php           #
   - koekeishiya/formulae   # chunkwm, khd
