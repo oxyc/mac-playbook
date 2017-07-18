@@ -21,12 +21,12 @@ dotfiles_files:
   - .bash_sessions_disable
   - .bash/aliases.sh
   - .bash/colors.sh
+  - .bash/completions.sh
   - .bash/exports.sh
   - .bash/functions.sh
   - .bash/prompt.sh
   - .bash/shell.sh
   - .bash/ssh-agent.sh
-  - .bash_completion.d/misc
   - .osx/osx.sh
   - .weechat/irc.conf
   - .weechat/lua/autoload/matrix.lua
