@@ -88,6 +88,7 @@ homebrew_installed_packages:
   - readline                  # gnu readline
 
   # More terminal tools.
+  - git-standup               # recall what you did on the last working day
   - httpie                    # cli http client
   - iperf                     # bandwidth benchmarking
   - lynx                      # browser
