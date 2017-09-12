@@ -72,6 +72,7 @@ homebrew_installed_packages:
   - make
   - nano
   # Update non-GNU pre-installed packages.
+  - { name: curl, install_options: "with-nghttp2" }
   - file-formula
   - git
   - openssh
@@ -83,7 +84,7 @@ homebrew_installed_packages:
 
   # Some other GNU tools.
   - autoconf                  # build tool
-  - gettext                   # gnu translation tool
+  - gettext                   # gnu translation tool @todo link
   - gpg                       # gnu privacy guard
   - readline                  # gnu readline
 
@@ -142,7 +143,7 @@ homebrew_installed_packages:
   # Image/Video tools
   - exiv2
   - name: ffmpeg
-    install_options: "with-fdk-aac,with-ffplay,with-freetype,with-libass,with-libquvi,with-libvorbis,with-libvpx,with-opus,with-x265"
+    install_options: "with-fdk-aac,with-ffplay,with-freetype,with-libass,with-libquvi,with-libvorbis,with-libvpx,with-opus,with-x265,with-theora"
   - gifsicle
   - { name: imagemagick, install_options: "with-webp" }
   - mozjpeg
