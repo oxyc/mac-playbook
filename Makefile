@@ -4,7 +4,7 @@ all: provision
 
 install: install-xcode install-ansible install-repo
 
-install-ansible: /usr/local/bin/pip /usr/local/bin/ansible
+install-ansible: /usr/local/bin/pip /usr/local/bin/ansible-playbook
 
 install-xcode:
 	xcode-select -p 2>&1 >/dev/null || xcode-select --install
